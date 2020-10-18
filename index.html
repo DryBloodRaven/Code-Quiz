@@ -24,7 +24,17 @@
             by ten seconds!</p>
             <button id="btn-start" class="btn-start">Start Quiz</button>
         </div>
-        <div class="question-container hidden"></div>
+
+        <div class="questions-container" id="question-container">
+            <h2 class="question-title" id="question-title"></h2>
+            <ul class="choices" id="choices"></ul>
+        </div>
+        <div id="answer" class="answer"></div>
+
+        <div class="end-container" id="end-container">
+            <h1>Congratulations!</h1>
+            <p class="end-result" id="end-result"></p>
+        </div>
     </main>
     <script src="./assets/js/script.js"></script> 
     <script src="./assets/js/questions.js"></script>   
