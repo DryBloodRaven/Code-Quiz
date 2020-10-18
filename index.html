@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Coding Quiz</title>
 </head>
 <body>
     <header>
         <ul>
             <li>
-                <button id="high-score">High Score</button>
+                <button id="high-score" class="high-score">High Score</button>
             </li>
-            <li id="timer">Timer</li>
-            <li id="countdown">60</li>
+            <li>Timer <span class id="countdown" class="countdown">60</span></li>
         </ul>
     </header>
 
     <main class="page-content" id="page-content">
-        <h1>Coding Quiz Challenge</h1>
-        <p>Try to answer the following code-related questions withing the time limit. </br> 
-        Keep in mind that incorrect answers will penalize your score/time </br>
-        by ten seconds!</p>
-        <button id="btn-start">Start Quiz</button>
+        <div class="start-container" id="start-container">
+            <h1 id="quiz-title">Coding Quiz Challenge</h1>
+            <p id="instructions">Try to answer the following code-related questions withing the time limit. </br> 
+            Keep in mind that incorrect answers will penalize your score/time </br>
+            by ten seconds!</p>
+            <button id="btn-start" class="btn-start">Start Quiz</button>
+        </div>
+        <div class="question-container hidden"></div>
     </main>
-    <script src="assets/js/script.js"></script>    
+    <script src="./assets/js/script.js"></script> 
+    <script src="./assets/js/questions.js"></script>   
 </body>
-</html>
+</html> 
