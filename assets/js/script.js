@@ -12,19 +12,18 @@ var endResult = document.querySelector("#end-container");
 var finalResult = document.querySelector("#end-result");
 
 var qIndex = 0;
-
 var countdownTimer = 60;
-function timer() {
-    countdown.innerText = countdownTimer;
-
-    var timer = setInterval(function() {
-        countdownTimer--;
-        countdown.innerText = countdownTimer;
-
-        if (countdownTimer === 0) {
-            clearInterval(timer);
+//debugger;
+var countTimer = function timer() {
+    var timeInterval = setInterval(function() {
+        if (countdownTimer >= 1) {
+            countdownTimer--;
+            countdown.innerText = countdownTimer
+        } else {
+            countdownTimer = 0;
+            clearInterval(timeInterval);
             stopQuiz();
-        }
+        } 
     }, 1000);
 }
 
@@ -61,7 +60,7 @@ var nextQuestion = function() {
         countdownTimer = countdownTimer - 10;
         if (countdownTimer <= 10){
             countdownTimer = 0;
-            clearInterval(timer);
+            clearInterval(timeInterval);
         }
         setTimeout(function() {
             answer.remove();
@@ -80,7 +79,7 @@ var nextQuestion = function() {
 // Start Quiz function where timer is stored
 function startQuiz() {
 
-    timer();
+    countTimer();
     startContent.style.display = "none";
     questionContainer.style.display = "block";
     endResult.style.display = "none";
@@ -90,7 +89,7 @@ function startQuiz() {
 
 var stopQuiz = function() {
     countdown.textContent = countdownTimer;
-    clearInterval(timer);
+    clearInterval(countdown);
 
     questionContainer.style.display = "none";
     endResult.style.display = "block";
