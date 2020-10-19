@@ -27,13 +27,20 @@
 
         <div class="questions-container" id="question-container">
             <h2 class="question-title" id="question-title"></h2>
-            <ul class="choices" id="choices"></ul>
+            <div class="choices" id="choices">
+                <!-- <ul class="choices" id="choices"></ul> -->
+            </div>
+            <div id="answer" class="answer"></div>
         </div>
-        <div id="answer" class="answer"></div>
+
 
         <div class="end-container" id="end-container">
-            <h1>Congratulations!</h1>
-            <p class="end-result" id="end-result"></p>
+            <h3 class="end-result" id="end-result"></h3>
+            <form>
+                <label class="initial-form">Please Enter Your Initials</label>
+                <input type="text" id="initials">
+                <button class="btn-start" id="btn-initial" type="submit">Sumbit</button>
+            </form>
         </div>
     </main>
     <script src="./assets/js/script.js"></script> 

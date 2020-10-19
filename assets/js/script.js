@@ -9,6 +9,7 @@ var questionChoices = document.querySelector("#choices");
 var answerDiv = document.querySelector("#answer");
 
 var endResult = document.querySelector("#end-container");
+var finalResult = document.querySelector("#end-result");
 
 var qIndex = 0;
 
@@ -26,18 +27,6 @@ function timer() {
         }
     }, 1000);
 }
-
-// Start Quiz function where timer is stored
-function startQuiz() {
-
-    timer();
-    startContent.style.display = "none";
-    questionContainer.style.display = "flex";
-    endResult.style.display = "none";
-
-    getQuestion();
-};
-
 
 // Get Questions
 var getQuestion = function () {
@@ -63,6 +52,7 @@ var nextQuestion = function() {
 
     if (this.value === questions[qIndex].answer) {
         answer.textContent = "Correct!"
+        countdownTimer = countdownTimer + 10;
         setTimeout(function() {
             answer.remove();
         }, 1000);
@@ -87,20 +77,25 @@ var nextQuestion = function() {
     }
 };
 
+// Start Quiz function where timer is stored
+function startQuiz() {
+
+    timer();
+    startContent.style.display = "none";
+    questionContainer.style.display = "block";
+    endResult.style.display = "none";
+
+    getQuestion();
+};
+
 var stopQuiz = function() {
     countdown.textContent = countdownTimer;
     clearInterval(timer);
 
     questionContainer.style.display = "none";
-    endResult.style.display = "flex";
+    endResult.style.display = "block";
 
-    endResult.textContent = "Your new highscore is: " + countdownTimer + "!";
+    finalResult.textContent = "Your new highscore is: " + countdownTimer + "!";
 };
-
-// Move from question to question
-
-// End Game
-
-// High Score List
 
 startBtn.addEventListener("click", startQuiz);

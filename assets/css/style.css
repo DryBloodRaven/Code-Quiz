@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+
+/* start of header style */
 header {
     background-color: purple;
     width: 100%;
@@ -33,13 +35,104 @@ header .timer {
     font-weight: bold;
 }
 
-.page-content {
+body {
+    background-color: lightgrey;
+}
+
+main {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
-.end-container {
+.start-container {
+
+}
+
+.start-container h1 {
+    text-align: center;
+    padding: 15px;
+    margin: 15px;
+    border-bottom: 2px solid black;
+    font-size: 40px;
+}
+
+.start-container p {
+    text-align: center;
+    padding: 15px;
+    margin: 15px;
+    font-size: 25px;
+}
+
+.btn-start {
+    margin: 15px;
+    padding: 15px;
+    color: lightgrey;
+    background-color: purple;
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 100%;
+}
+
+
+#questions-container {
     display: none;
 }
+
+.question-container {
+    display: block;
+}
+
+.question-title {
+    font-weight: bold;
+    font-size: 35px;
+    padding: 5px;
+    margin: 15px;
+
+}
+
+.btn-choice {
+    display: block;
+    margin: 5px;
+    padding: 15px;
+    background-color: purple;
+    color: lightgrey;
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.answer {
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+#end-container {
+    display: none;
+}
+
+.end-result {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 15px;
+}
+
+.end-container form {
+    text-align: center;
+    font-size: 25px;
+}
+
+form input {
+    border: 2px solid black;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 25px;
+}
+
