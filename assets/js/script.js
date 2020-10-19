@@ -2,14 +2,14 @@
 var startBtn = document.querySelector("#btn-start");
 var countdown = document.querySelector("#countdown");
 var startContent = document.querySelector("#start-container");
-
 var questionContainer = document.querySelector("#question-container");
 var questionTitle = document.querySelector("#question-title");
 var questionChoices = document.querySelector("#choices");
 var answerDiv = document.querySelector("#answer");
-
 var endResult = document.querySelector("#end-container");
 var finalResult = document.querySelector("#end-result");
+var userInput = document.querySelector("#initials");
+var submitBox = document.querySelector("#btn-initial");
 
 var qIndex = 0;
 var countdownTimer = 60;
@@ -96,5 +96,30 @@ var stopQuiz = function() {
 
     finalResult.textContent = "Your new highscore is: " + countdownTimer + "!";
 };
+
+submitBox.addEventListener("click", function() {
+    var initials = userInput.value;
+
+    if (initials === null) {
+        console.log("Nothing Entered");
+    } else {
+        var endingScore = {
+            initials: initials,
+            score: countdownTimer
+        }
+    }
+    var scores = localStorage.getItem("scores");
+    if (scores === null) {
+        scores = [];
+    } else {
+        scores = JSON.parse(scores);
+    }
+    scores.push(endingScore);
+    var finalScore = JSON.stringify(scores);
+    localStorage.setItem("scores", finalScore);
+
+    window.location.replace("./scores.html");
+});
+
 
 startBtn.addEventListener("click", startQuiz);

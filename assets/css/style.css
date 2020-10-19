@@ -142,3 +142,14 @@ form input {
     font-size: 25px;
 }
 
+.high-score-container {
+    display: block;
+    width: min-content;
+    align-items: center;
+    text-align: center;
+}
+
+.high-score-btns {
+    display: flex;
+    justify-content: space-evenly;
+}
