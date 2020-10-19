@@ -22,5 +22,5 @@ https://drybloodraven.github.io/Code-Quiz/
 ![image](./assets/images/High-Score.PNG)
 
 ## Contribution
-Made with ❤️ by Alex Proctor
+Made with ❤️ by Alex Proctor <br />
 Help from Randall Burgess (Tutor) who pushed me in the right direction when I though all hope was lost!
