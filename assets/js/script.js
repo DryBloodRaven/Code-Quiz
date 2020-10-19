@@ -12,10 +12,8 @@ var endResult = document.querySelector("#end-container");
 
 var qIndex = 0;
 
-// Start Quiz function where timer is stored
-function startQuiz() {
-
-    var countdownTimer = 60;
+var countdownTimer = 60;
+function timer() {
     countdown.innerText = countdownTimer;
 
     var timer = setInterval(function() {
@@ -24,10 +22,15 @@ function startQuiz() {
 
         if (countdownTimer === 0) {
             clearInterval(timer);
-            allDone(countdownTimer);
+            stopQuiz();
         }
     }, 1000);
+}
 
+// Start Quiz function where timer is stored
+function startQuiz() {
+
+    timer();
     startContent.style.display = "none";
     questionContainer.style.display = "flex";
     endResult.style.display = "none";
@@ -62,7 +65,7 @@ var nextQuestion = function() {
         answer.textContent = "Correct!"
         setTimeout(function() {
             answer.remove();
-        }, 1500);
+        }, 1000);
     } else {
         answer.textContent = "Wrong!";
         countdownTimer = countdownTimer - 10;
@@ -72,7 +75,7 @@ var nextQuestion = function() {
         }
         setTimeout(function() {
             answer.remove();
-        }, 1500);
+        }, 1000);
     }
 
     qIndex++;
