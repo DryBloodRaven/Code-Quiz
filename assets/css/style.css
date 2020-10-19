@@ -45,11 +45,6 @@ main {
     align-items: center;
 }
 
-
-.start-container {
-
-}
-
 .start-container h1 {
     text-align: center;
     padding: 15px;
@@ -142,14 +137,23 @@ form input {
     font-size: 25px;
 }
 
-.high-score-container {
+#high-score-container {
     display: block;
-    width: min-content;
-    align-items: center;
     text-align: center;
+    margin: 15px;
+    padding: 15px;
 }
 
-.high-score-btns {
-    display: flex;
-    justify-content: space-evenly;
+#high-score-container p {
+    padding: 5px;
+    margin: 5px;
+}
+
+.high-score-btns button {
+    display: inline;
+    width: min-content;
+}
+
+.high-score-btns a {
+    text-decoration: none;
 }

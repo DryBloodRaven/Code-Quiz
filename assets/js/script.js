@@ -10,10 +10,10 @@ var endResult = document.querySelector("#end-container");
 var finalResult = document.querySelector("#end-result");
 var userInput = document.querySelector("#initials");
 var submitBox = document.querySelector("#btn-initial");
-
 var qIndex = 0;
 var countdownTimer = 60;
-//debugger;
+
+// Timer function
 var countTimer = function timer() {
     var timeInterval = setInterval(function() {
         if (countdownTimer >= 1) {
@@ -44,6 +44,7 @@ var getQuestion = function () {
     });
 };
 
+// Function to move through questions
 var nextQuestion = function() {
     var answer = document.createElement("h3");
     answer.setAttribute("class", "answer");
@@ -76,7 +77,7 @@ var nextQuestion = function() {
     }
 };
 
-// Start Quiz function where timer is stored
+// Start Quiz function
 function startQuiz() {
 
     countTimer();
@@ -87,6 +88,7 @@ function startQuiz() {
     getQuestion();
 };
 
+// Stop quiz function
 var stopQuiz = function() {
     countdown.textContent = countdownTimer;
     clearInterval(countdown);
@@ -97,17 +99,15 @@ var stopQuiz = function() {
     finalResult.textContent = "Your new highscore is: " + countdownTimer + "!";
 };
 
+// store highscores and initials based on the submit button being clicked
 submitBox.addEventListener("click", function() {
     var initials = userInput.value;
 
-    if (initials === null) {
-        console.log("Nothing Entered");
-    } else {
-        var endingScore = {
+    var endingScore = {
             initials: initials,
             score: countdownTimer
-        }
     }
+
     var scores = localStorage.getItem("scores");
     if (scores === null) {
         scores = [];
@@ -118,8 +118,8 @@ submitBox.addEventListener("click", function() {
     var finalScore = JSON.stringify(scores);
     localStorage.setItem("scores", finalScore);
 
-    window.location.replace("./scores.html");
+    location.href = "scores.html"
 });
 
-
+// Event to start the whole quiz
 startBtn.addEventListener("click", startQuiz);
