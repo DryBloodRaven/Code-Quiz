@@ -23,3 +23,4 @@ https://drybloodraven.github.io/Code-Quiz/
 
 ## Contribution
 Made with ❤️ by Alex Proctor
+Help from Randall Burgess (Tutor) who pushed me in the right direction when I though all hope was lost!
